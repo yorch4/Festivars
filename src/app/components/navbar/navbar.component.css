@@ -1,0 +1,17 @@
+nav {
+  font-family: 'Europa';
+}
+
+nav a {
+  color: gainsboro;
+  font-size: 1.6rem;
+}
+
+nav a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.bg-dark {
+  background-color: rgb(26, 26, 26) !important;
+}
