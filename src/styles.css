@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Europa';
+    color: gainsboro;
+    background-color: rgb(39, 39, 39);
+}
+.bg-dark {
+    background-color: rgb(26, 26, 26) !important;
+  }
