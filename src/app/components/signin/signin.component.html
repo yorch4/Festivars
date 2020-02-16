@@ -3,31 +3,27 @@
         <h5>Sign in</h5>
     </div>
     <div class="card-body mt-3">
-        <form class="needs-validation">
+        <form [formGroup]="registerForm" class="needs-validation">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" formControlName="email" required>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col">
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" required>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" required>
+                        <input type="password" class="form-control" formControlName="password" required>
+                        <label class="error">{{errorMessage}}</label>
+                        <label class="success">{{succesMessage}}</label>
                     </div>
                 </div>
             </div>
             <div class="form-group text-center mt-5 mb-3">
-                <button class="btn btn-primary" onclick="ja()" type="submit">Sign In</button>
+                <button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-primary">Sign In</button>
             </div>
         </form>
     </div>
