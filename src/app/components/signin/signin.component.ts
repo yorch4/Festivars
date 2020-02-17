@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
+declare const validate: any;
+
 
 @Component({
   selector: 'app-signin',
@@ -17,6 +19,7 @@ export class SigninComponent implements OnInit {
   ngOnInit() {
     this.auth.eventAuthError$.subscribe( data => {
       this.authError = data;
+      validate();
     })
   }
 

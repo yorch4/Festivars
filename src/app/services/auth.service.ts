@@ -40,7 +40,7 @@ export class AuthService {
         this.newUser = user;
         console.log(userCredential);
         userCredential.user.updateProfile( {
-          displayName: user.firstName + ' ' + user.lastName
+          displayName: user.firstName + ' ' + user.lastName + ' ' + user.sex
         });
 
         this.insertUserData(userCredential)
@@ -58,7 +58,7 @@ export class AuthService {
         email: this.newUser.email,
         firstname: this.newUser.firstName,
         lastname: this.newUser.lastName,
-        role: 'network user'
+        sex: this.newUser.sex
       })
     }
 
