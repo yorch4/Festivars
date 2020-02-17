@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -8,25 +8,20 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  private errorMessage;
-  private successMessage;
-  private authService = AuthService;
 
-  constructor() { }
+  authError: any;
 
-  ngOnInit() {
+  constructor(private auth: AuthService) {
   }
 
-  tryRegister(value) {
-    this.authService.doRegister(value).then(res => {
-      console.log(res);
-      this.errorMessage = "";
-      this.successMessage = "Tu cuenta ha sido creada";
-    }, err => {
-      console.log(err);
-      this.errorMessage = err.message;
-      this.successMessage = "";
+  ngOnInit() {
+    this.auth.eventAuthError$.subscribe( data => {
+      this.authError = data;
     })
+  }
+
+  createUser(frm) {
+    this.auth.createUser(frm.value);
   }
 
 }

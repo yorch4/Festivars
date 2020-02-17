@@ -12,7 +12,8 @@
         </li>
       </ul>
       <span class="navbar-text">
-        <a class="nav-item" href="/login">Log In</a>
+        <a *ngIf="!user" class="nav-item" (click)="login()">Log In</a>
+        <a *ngIf="user" class="nav-item" (click)="logout()">Log Out</a>
       </span>
     </div>
   </nav>

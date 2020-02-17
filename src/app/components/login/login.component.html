@@ -3,14 +3,19 @@
         <h5>Log In</h5>
     </div>
     <div class="card-body mt-3">
-        <form class="needs-validation">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="needs-validation">
+            <div class="row" *ngIf="authError">
+                <div class="col alert alert-danger">
+                    {{ authError?.message }}
+                </div>
+            </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" ngModel #email="ngModel" name="email" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" required>
+                <input type="password" ngModel #password="ngModel" class="form-control" name="password" required>
             </div>
             <div class="form-group text-center mt-5 mb-3">
                 <button class="btn btn-primary" type="submit">LOG IN</button>
