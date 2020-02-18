@@ -10,58 +10,6 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="firstName">Nombre</label>
-                        <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" required>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="lastName">Apellidos</label>
-                        <input ngModel #lastname="ngModel" name="lastName" type="text" class="form-control" required>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <label>Sexo</label><br><br>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline1" name="sexo" class="custom-control-input"
-                            value="Hombre" checked>
-                        <label class="custom-control-label" for="customRadioInline1">Hombre</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input ngModel #sex="ngModel" type="radio" id="customRadioInline2" name="sexo"
-                            class="custom-control-input" value="Mujer">
-                        <label class="custom-control-label" for="customRadioInline2">Mujer</label>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <label class="mb-4" for="inlineFormCustomSelectPref">País</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option value="España">España</option>
-                        <option value="Alemania">Alemania</option>
-                        <option value="Francia">Francia</option>
-                        <option value="Italia">Italia</option>
-                        <option value="Inglaterra">Inglaterra</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="aficiones">Aficiones</label>
-                        <select multiple class="form-control" id="aficiones">
-                          <option>Deporte</option>
-                          <option>Programar</option>
-                          <option>Viajar</option>
-                          <option>Amigos/Familia</option>
-                        </select>
-                      </div>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -87,6 +35,45 @@
                             Las contraseñas no coinciden
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="firstName">Nombre</label>
+                        <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="lastName">Apellidos</label>
+                        <input ngModel #lastname="ngModel" name="lastName" type="text" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Sexo</label><br><br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="hombre" name="sexo" class="custom-control-input"
+                            value="Hombre" checked>
+                        <label class="custom-control-label" for="hombre">Hombre</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="mujer" name="sexo"
+                            class="custom-control-input" value="Mujer">
+                        <label class="custom-control-label" for="mujer">Mujer</label>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label class="mb-4" for="country">País</label>
+                    <select class="custom-select my-1 mr-sm-2" id="country">
+                        <option value="España">España</option>
+                        <option value="Alemania">Alemania</option>
+                        <option value="Francia">Francia</option>
+                        <option value="Italia">Italia</option>
+                        <option value="Inglaterra">Inglaterra</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group text-center mt-5 mb-3">

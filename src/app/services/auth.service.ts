@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import * as $ from 'jquery';
 
 @Injectable({
   providedIn: 'root'
@@ -40,7 +41,7 @@ export class AuthService {
         this.newUser = user;
         console.log(userCredential);
         userCredential.user.updateProfile( {
-          displayName: user.firstName + ' ' + user.lastName + ' ' + user.sex
+          displayName: user.firstName + ' ' + user.lastName + ' ' + user.country
         });
 
         this.insertUserData(userCredential)
@@ -54,11 +55,18 @@ export class AuthService {
     }
 
     insertUserData(userCredential: firebase.auth.UserCredential) {
+      var sexo;
+      if($('#hombre').is(":checked")) {
+        sexo = "Hombre";
+      } else {
+        sexo = "Mujer";
+      }
       return this.db.doc(`Users/${userCredential.user.uid}`).set({
         email: this.newUser.email,
         firstname: this.newUser.firstName,
         lastname: this.newUser.lastName,
-        sex: this.newUser.sex
+        country: $('#country').val(),
+        sex: sexo
       })
     }
 
