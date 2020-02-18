@@ -4,8 +4,8 @@
     </div>
     <div class="card-body mt-3">
         <form id="form" #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)" ngNativeValidate>
-            <div class="row" *ngIf="AuthError">
-                <div class="col alert alert-danger">
+            <div class="row" *ngIf="authError">
+                <div class="col text-center alert alert-danger">
                     {{ authError?.message }}
                 </div>
             </div>
@@ -80,6 +80,9 @@
                 <button class="btn btn-primary" type="submit" ng-disabled="form.$invalid">
                     Sign In
                 </button>
+            </div>
+            <div class="text-center">
+                <span class="small">¿Ya tienes una cuenta? <a href="/login">Log in</a></span>
             </div>
         </form>
     </div>
