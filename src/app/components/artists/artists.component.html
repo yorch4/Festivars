@@ -1,0 +1,29 @@
+<section id="artists">
+    <button class="btn btn-primary ml-5 mt-3" data-toggle="modal" data-target="#exampleModal" >Agregar Artista</button>
+    <div class="row ml-5">
+        <div class="col-sm-4 mt-3" *ngFor="let artist of artists">
+            <div class="card">
+                <img class="card-img-top" style="height: 15rem;" src={{artist.photo}} alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{artist.alias}}</h5>
+                  <div class="card-text">
+                      <ul class="list-unstyled ml-5">
+                        <li><i class="fa fa-birthday-cake mr-2"></i>{{artist.age}}</li>
+                        <li><i class="fa fa-flag mr-2"></i>{{artist.nacionality}}</li>
+                        <li><i class="fa fa-genderless mr-2"></i>{{artist.gender}}</li>
+                      </ul>                        
+                      </div>
+                      <div class="row justify-content-between ml-5 mt-5">
+                        <div class="col-sm-6">
+                            <button class="btn btn-primary" (click)="onPreUpdateArtist(artist)" data-toggle="modal" data-target="#exampleModal">Modificar</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-danger" (click)="onDeleteArtist(artist.id)">Eliminar</button>
+                        </div>
+                      </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</section>
+<app-modal></app-modal>

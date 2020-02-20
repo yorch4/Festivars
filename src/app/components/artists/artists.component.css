@@ -1,0 +1,19 @@
+.card {
+    width: 30rem;
+    border-top: #e18508 3px solid;
+}
+.card-header {
+    color: black !important;
+}
+.card-title {
+    color: #e18508 !important;
+}
+.card-text {
+    color: black !important;
+}
+.btn-primary {
+    background-color: #e18508 !important;
+}
+.btn-danger {
+    background-color: red !important;
+}

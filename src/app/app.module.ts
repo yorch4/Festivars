@@ -13,6 +13,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './components/home/home.component';
+import { ArtistsComponent } from './components/artists/artists.component';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { HomeComponent } from './components/home/home.component';
     FooterComponent,
     LoginComponent,
     SigninComponent,
-    HomeComponent
+    HomeComponent,
+    ArtistsComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,7 @@ import { HomeComponent } from './components/home/home.component';
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
