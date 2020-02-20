@@ -4,6 +4,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import * as $ from 'jquery';
+import { auth } from 'firebase';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,10 @@ export class AuthService {
 
     getUserState() {
       return this.afAuth.authState;
+    }
+
+    isAuth() {
+      return this.afAuth.authState.pipe(map(auth => auth));
     }
 
     login(email:string, password: string) {
@@ -41,7 +47,7 @@ export class AuthService {
         this.newUser = user;
         console.log(userCredential);
         userCredential.user.updateProfile( {
-          displayName: user.firstName + ' ' + user.lastName + ' ' + user.country
+          displayName: user.firstName + ' ' + user.lastName
         });
 
         this.insertUserData(userCredential)
@@ -71,6 +77,7 @@ export class AuthService {
     }
 
     logout() {
+      this.router.navigate(['/login']);
       return this.afAuth.auth.signOut();
     }
 

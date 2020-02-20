@@ -21,7 +21,7 @@ import { HomeComponent } from './components/home/home.component';
     FooterComponent,
     LoginComponent,
     SigninComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

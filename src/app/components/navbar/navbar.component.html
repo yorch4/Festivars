@@ -13,7 +13,9 @@
       </ul>
       <span class="navbar-text">
         <a *ngIf="!user"  class="nav-item" style="cursor:pointer" (click)="login()">Log In</a>
-        <a *ngIf="user" class="nav-item" style="cursor:pinter" (click)="logout()">Log Out</a>
+        <a *ngIf="user" class="nav-item" href="/profile">Perfil</a>
+        <a *ngIf="user" class="nav-item" style="cursor:pointer" (click)="logout()">Log Out</a>
       </span>
     </div>
   </nav>
+  {{user?.displayName}}
