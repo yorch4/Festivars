@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="row">
+    <div class="col-sm-4 mt-3" *ngFor="let festival of festivals">
+        <div class="card">
+            <img class="card-img-top" style="height: 15rem;" src={{festival.photo}} alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{festival.name}}</h5>
+              <div class="card-text">
+                  <ul class="list-unstyled ml-5">
+                    <li><i class="fa fa-users mr-2"></i>{{festival.capacity}}</li>
+                        <li><i class="fa fa-calendar mr-2"></i>{{festival.date}} </li>
+                        <li><i class="fa fa-ban"></i>{{festival.allowedAge}}</li>
+                  </ul>                        
+                  </div>
+            </div>
+          </div>
+    </div>
+</div>

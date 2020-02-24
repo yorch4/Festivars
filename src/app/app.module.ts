@@ -16,6 +16,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ArtistsComponent } from './components/artists/artists.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ModalComponent } from './components/modal/modal.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MysqlService } from './services/mysql.service';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,10 @@ import { ModalComponent } from './components/modal/modal.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ],
-  providers: [AngularFirestore],
+  providers: [AngularFirestore, MysqlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
